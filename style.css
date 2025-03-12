@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-image: url("sandwich-2977251_1280.jpg");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0 , 0 , 0.22);
+    backdrop-filter: blur(2px);
+}
+html{
+     scroll-behavior: smooth;
+}
+
+#home{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.banner {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+     /* Temporary background to see the banner */
+}
+
+.slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 38%; /* Added 'px' unit */
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 25s linear infinite;
+}
+
+@keyframes autoRun {
+      from{
+        transform: perspective(1000px) rotateX(-15deg) rotateY(0deg);
+      }to{
+        transform: perspective(1000px) rotateX(-15deg) rotateY(360deg);
+      }
+}
+
+.item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+    rotateY(calc( (var(--position) - 1)   *   (360 / var(--quantity))  *  1deg ))
+    translateZ(400px);
+}
+
+.item img {
+    width: 110%; /* Adjust image to container width */
+    height: 90%; /* Adjust image to container height */
+     
+}
+.main1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 110px;
+    color: orange;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px black, 2px 2px 10px rgba(193,108,28,0.731), 2px 2px 10px black ;
+}
+#nav{
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    background: linear-gradient(to right , rgba(255, 166, 0 , 0.103) , rgba(19,93,59,801));
+    border: 2px solid black;
+    border-radius: 0px 0px 50% 50% ;
+    box-shadow: 0px 5px 10px  black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+.logo img{
+    height: 100px;
+    height: 100px;
+}
+.logo{
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: 2px 2px 10px black, 2px 2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.list ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    gap: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    list-style: none;
+    cursor: pointer;
+}
+.list ul li{
+   transition: all 0.5s;
+}
+
+.list ul hover{
+    letter-spacing: 4px;
+}
+.po img{
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow( 2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black);
+}
+.po{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid orange;
+    background: transparent;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 500; 
+    color: orange;
+    text-shadow: 2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    box-shadow:  2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    text-decoration: none;
+}
+.list ul a{
+    text-decoration: none;
+    color: orange;
+}
+.po:hover{
+    flex-direction: row-reverse;
+    background-color: rgba(255, 166, 0 , 0.514);
+    color: white;
+}
+#menu{
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    perspective: 1000px;
+}
+.card1{
+    width: 250px;
+    height: 400px;
+    position: relative;
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.card1:hover{
+    transform: rotateY(180deg);
+}
+.fcard{
+    width: 250px;
+    height: 400px;
+    background-color: rgba(240,248,255,0.198);
+    backdrop-filter: blur(5px);
+    border: 4px solid orange;
+    border-radius: 40px;
+    box-shadow:2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    color: orange;
+    
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    position: absolute;
+     
+}
+.fcard img{
+    width: 250px;
+    height: 230px;
+    filter: drop-shadow(2px 2px 10px black);
+
+}
+.bcard{
+    width: 250px;
+    height: 400px;
+    background-color: rgba(240,248,255,0.198);
+    backdrop-filter: blur(5px);
+    border: 4px solid orange;
+    border-radius: 40px;
+    box-shadow:2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    font-size: 40px;
+    font-weight: 700;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.bcard span{
+    color: red;
+    font-size: 70px;
+}
+
+#placeOrder{
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main3{
+    width: 80%;
+    height: 80%;
+    background-color: rgba(240,248,255,0.487);
+    backdrop-filter: blur(5px);
+    border: 4px solid orange;
+    border-radius: 40px;
+    box-shadow:2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.logo1 img{
+    width: 190px;
+    height: 190px;
+    
+}
+.logo1{
+    border: 4px solid orange;
+    border-radius: 30px;
+    box-shadow:2px 2px 10px black, -2px -2px 10px rgba(193,108,28,0.731) , 2px 2px 10px black;
+    cursor: pointer;
+}
+.logo1:hover{
+    box-shadow: inset  5px 5px  10px black, -2px -2px 10px rgba(193,108,28,0.731);
+}
